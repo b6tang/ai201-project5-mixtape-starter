@@ -108,7 +108,8 @@ elif days_since_last == 1:
     user.listening_streak += 1 
 ```
 This preserves the intended rules: same-day listens do not increment, consecutive days increment, and skipped days reset the streak.
-**Side-Effect Check:**After the fix, I reran:`pytest tests/test_streaks.py -q`. The result was 5 passed. This verified both sides of the affected boundary: Saturday-to-Sunday now increments correctly, while skipping a day still resets the streak. The same test suite also confirmed that a new user starts at 1, same-day listens do not double-count, and ordinary consecutive days still increment.
+
+**Side-Effect Check:** After the fix, I reran:`pytest tests/test_streaks.py -q`. The result was 5 passed. This verified both sides of the affected boundary: Saturday-to-Sunday now increments correctly, while skipping a day still resets the streak. The same test suite also confirmed that a new user starts at 1, same-day listens do not double-count, and ordinary consecutive days still increment.
 
 ### Issue #2 — Friends Listening Now shows people from yesterday
 

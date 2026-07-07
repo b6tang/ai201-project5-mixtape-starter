@@ -209,13 +209,6 @@ Before the fix, the test failed because `rate_song()` saved the `Rating` but cre
 
 I also added `tests/test_feed.py` for Issue #2. It freezes time and verifies that a 15-minute listening event is included while a 31-minute event is excluded. Under the original 24-hour threshold, both events were returned, so the test failed before the fix and now passes.
 
-## Commit History
+## Commit History Screenshot
 
-```text
-763a402 (HEAD -> bugfix/mixtape, origin/bugfix/mixtape) fix: narrow listening now window to 30 minutes
-b45091e fix: notify song sharers about ratings
-66e8dec fix: return all songs in playlist
-5d1f036 fix: correct Sunday boundary condition in streak reset logic
-2dfdeaa (origin/main, origin/HEAD, main) Add .gitignore file and update README with setup instructions
-7b64551 initial commit
-```
+![Git log on bugfix/mixtape](git-log-bugfix-mixtape.png)
